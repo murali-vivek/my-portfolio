@@ -1,4 +1,5 @@
-import { problemSolvingSteps, toolSelections } from "@/lib/process";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { problemSolvingSteps } from "@/lib/process";
 
 const stories = [
   {
@@ -65,23 +66,26 @@ export function MethodPage() {
         ))}
       </div>
 
-      <h2 className="mt-16 font-display text-2xl tracking-tight">
-        Different problems needed different stacks. The thinking didn&apos;t
-        change.
-      </h2>
-      <ul className="mt-6 space-y-3">
-        {toolSelections.map((row) => (
-          <li
-            key={row.id}
-            className="flex flex-col gap-1 border-t border-line pt-3 sm:flex-row sm:justify-between"
-          >
-            <span className="text-sm text-muted">{row.context}</span>
-            <span className="font-mono text-xs text-accent">
-              {row.tools.join(" · ")}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-16 space-y-8 border-t border-line pt-10">
+        <div>
+          <p className="text-sm leading-relaxed text-muted">
+            Curious what I ship when the brief is mine?
+          </p>
+          <div className="mt-4">
+            <ButtonLink href="/workshop" variant="primary">
+              Peek in the workshop
+            </ButtonLink>
+          </div>
+        </div>
+        <div>
+          <p className="text-sm leading-relaxed text-muted">
+            Want the rest of the picture?
+          </p>
+          <div className="mt-4">
+            <ButtonLink href="/cv">See my CV</ButtonLink>
+          </div>
+        </div>
+      </div>
     </article>
   );
 }

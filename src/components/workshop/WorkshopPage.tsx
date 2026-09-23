@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { WorkshopGallery } from "@/components/workshop/WorkshopGallery";
 
 const shots = [
   {
@@ -69,27 +69,10 @@ export function WorkshopPage() {
         </p>
 
         <h3 className="mt-12 font-display text-xl text-foreground">Gallery</h3>
-        <ul className="mt-6 grid gap-8">
-          {shots.map((shot) => (
-            <li key={shot.src}>
-              <figure>
-                <a href={shot.src} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={1920}
-                    height={1080}
-                    className="h-auto w-full rounded-sm border border-line bg-surface"
-                    sizes="(min-width: 768px) 48rem, 100vw"
-                  />
-                </a>
-                <figcaption className="mt-3 font-mono text-[12px] leading-relaxed text-faint">
-                  {shot.caption}
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+        <p className="mt-2 text-sm text-faint">
+          Tap a frame to open it.
+        </p>
+        <WorkshopGallery shots={shots} />
 
         <h3 className="mt-12 font-display text-xl text-foreground">
           Why the pieces exist
