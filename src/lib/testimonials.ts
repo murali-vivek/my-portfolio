@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     kind: "quote",
     name: "Wanted: someone I've impressed",
     role: "Vacancy · multiple openings · still filling",
-    company: "Open Position",
+    company: "",
     quote: "Requirements: worked with me, survived it, willing to say something nice on the record.\n\nReferral bonus: eternal gratitude.",
   },
 ];
