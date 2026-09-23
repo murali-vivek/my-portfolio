@@ -21,8 +21,8 @@ export const testimonials: Testimonial[] = [
     id: "open-slot",
     kind: "quote",
     name: "Wanted: someone I've impressed",
-    role: "Vacancy · multiple openings · still filling",
-    company: "",
+    role: "Vacancy · multiple openings",
+    company: "still filling",
     quote: "Requirements: worked with me, survived it, willing to say something nice on the record.\n\nReferral bonus: eternal gratitude.",
   },
 ];

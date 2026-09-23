@@ -8,7 +8,7 @@ export function TestimonialCard({ item }: { item: Testimonial }) {
           {item.name}
         </p>
         <p className="mt-0.5 font-mono text-[11px] text-muted">
-          {item.role} — {item.company}
+          {item.role} - {item.company}
         </p>
       </header>
       <div className="max-h-36 overflow-y-auto px-4 py-3 text-xs leading-relaxed text-muted sm:max-h-44 sm:text-sm">
