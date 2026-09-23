@@ -4,7 +4,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
-    <main id="main">
+    <main id="main" className="flex min-h-svh flex-col">
       <Constellation />
       <HomeHero />
       <Testimonials />
