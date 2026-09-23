@@ -24,9 +24,9 @@ const items = [
   },
 ] as const;
 
-export function SocialLinks() {
+export function SocialLinks({ className = "mt-8" }: { className?: string }) {
   return (
-    <ul className="mt-8 flex items-center justify-center gap-6">
+    <ul className={`flex items-center justify-center gap-6 ${className}`.trim()}>
       {items.map((item) => (
         <li key={item.label} className="flex justify-center">
           <a

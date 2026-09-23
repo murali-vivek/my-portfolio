@@ -1,4 +1,5 @@
 import { JetBrains_Mono, Oxanium } from "next/font/google";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { site } from "@/lib/site";
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SkipLink />
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
