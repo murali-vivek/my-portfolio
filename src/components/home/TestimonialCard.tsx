@@ -19,7 +19,9 @@ export function TestimonialCard({
           {role} — {company}
         </p>
       </header>
-      <p className="px-4 py-3 text-sm leading-relaxed text-muted">{quote}</p>
+      <p className="max-h-36 overflow-y-auto px-4 py-3 text-xs leading-relaxed text-muted sm:max-h-44 sm:text-sm">
+        {quote}
+      </p>
     </article>
   );
 }
