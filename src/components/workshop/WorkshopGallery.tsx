@@ -60,23 +60,28 @@ export function WorkshopGallery({ shots }: WorkshopGalleryProps) {
 
   return (
     <>
-      <ul className="mt-6 grid grid-cols-2 gap-1.5 sm:grid-cols-3 sm:gap-2">
+      <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {shots.map((shot, index) => (
           <li key={shot.src}>
             <button
               type="button"
-              className="group relative block aspect-square w-full overflow-hidden rounded-sm border border-line bg-surface"
+              className="group block w-full text-left"
               onClick={() => setOpenIndex(index)}
               aria-label={`Open ${shot.alt}`}
             >
-              <Image
-                src={shot.src}
-                alt=""
-                width={640}
-                height={640}
-                className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
-                sizes="(min-width: 768px) 16rem, 45vw"
-              />
+              <span className="relative block aspect-square overflow-hidden rounded-sm border border-line bg-surface">
+                <Image
+                  src={shot.src}
+                  alt=""
+                  width={640}
+                  height={640}
+                  className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                  sizes="(min-width: 768px) 16rem, 45vw"
+                />
+              </span>
+              <span className="mt-2 block font-mono text-[11px] leading-snug text-faint">
+                {shot.caption}
+              </span>
             </button>
           </li>
         ))}
