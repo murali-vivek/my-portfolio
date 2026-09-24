@@ -92,61 +92,88 @@ export function Testimonials() {
           onClick={closeDialog}
         >
           <div
-            className="flex w-full max-w-4xl items-center gap-3 sm:gap-4"
+            className="flex w-full max-w-4xl flex-col sm:flex-row items-center gap-3 sm:gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
-              aria-label="Previous testimonial"
-              onClick={(e) => {
-                e.stopPropagation();
-                goPrevious();
-              }}
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            <div className="relative min-w-0 flex-1 bg-surface border border-line rounded-lg shadow-xl">
+            <div className="relative min-w-0 flex-1 w-full bg-surface border border-line rounded-lg shadow-xl">
               <button
                 type="button"
-                className="absolute top-4 right-4 inline-flex size-8 items-center justify-center rounded-full border border-line-strong text-muted hover:text-foreground hover:bg-surface-2 transition-colors"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex size-7 sm:size-8 items-center justify-center rounded-full border border-line-strong text-muted hover:text-foreground hover:bg-surface-2 transition-colors z-10"
                 aria-label="Close dialog"
                 onClick={closeDialog}
               >
                 <X size={16} />
               </button>
 
-              <div className="p-6">
-                <div className="border-b border-line pb-4 mb-4">
-                  <h3 className="font-display text-xl text-foreground sm:text-2xl">
+              <div className="p-4 sm:p-6">
+                <div className="border-b border-line pb-3 sm:pb-4 mb-3 sm:mb-4">
+                  <h3 className="font-display text-lg sm:text-xl lg:text-2xl text-foreground pr-8">
                     {item.name}
                   </h3>
-                  <p className="mt-1 font-mono text-xs text-muted">
+                  <p className="mt-1 font-mono text-[10px] sm:text-xs text-muted">
                     {item.role} — {item.company}
                   </p>
                 </div>
-                <div className="text-sm leading-relaxed text-muted">
+                <div className="text-xs sm:text-sm leading-relaxed text-muted max-h-[50vh] sm:max-h-none overflow-y-auto">
                   {item.quote.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className={index > 0 ? 'mt-3' : ''}>
+                    <p key={index} className={index > 0 ? 'mt-2 sm:mt-3' : ''}>
                       {paragraph}
                     </p>
                   ))}
                 </div>
               </div>
+
+              <div className="flex items-center justify-between p-4 sm:hidden border-t border-line">
+                <button
+                  type="button"
+                  className="inline-flex size-10 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+                  aria-label="Previous testimonial"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goPrevious();
+                  }}
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex size-10 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+                  aria-label="Next testimonial"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goNext();
+                  }}
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
             </div>
 
-            <button
-              type="button"
-              className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
-              aria-label="Next testimonial"
-              onClick={(e) => {
-                e.stopPropagation();
-                goNext();
-              }}
-            >
-              <ChevronRight size={18} />
-            </button>
+            <div className="hidden sm:flex items-center gap-3">
+              <button
+                type="button"
+                className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+                aria-label="Previous testimonial"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goPrevious();
+                }}
+              >
+                <ChevronLeft size={18} />
+              </button>
+
+              <button
+                type="button"
+                className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+                aria-label="Next testimonial"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goNext();
+                }}
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
       )}
