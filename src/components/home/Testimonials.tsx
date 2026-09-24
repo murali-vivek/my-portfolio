@@ -95,6 +95,18 @@ export function Testimonials() {
             className="flex w-full max-w-4xl flex-col sm:flex-row items-center gap-3 sm:gap-4"
             onClick={(e) => e.stopPropagation()}
           >
+            <button
+              type="button"
+              className="hidden sm:inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+              aria-label="Previous testimonial"
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrevious();
+              }}
+            >
+              <ChevronLeft size={18} />
+            </button>
+
             <div className="relative min-w-0 flex-1 w-full bg-surface border border-line rounded-lg shadow-xl">
               <button
                 type="button"
@@ -149,31 +161,17 @@ export function Testimonials() {
               </div>
             </div>
 
-            <div className="hidden sm:flex items-center gap-3">
-              <button
-                type="button"
-                className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
-                aria-label="Previous testimonial"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goPrevious();
-                }}
-              >
-                <ChevronLeft size={18} />
-              </button>
-
-              <button
-                type="button"
-                className="inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
-                aria-label="Next testimonial"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goNext();
-                }}
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
+            <button
+              type="button"
+              className="hidden sm:inline-flex size-10 shrink-0 items-center justify-center rounded-sm border border-line-strong text-foreground hover:bg-surface-2 transition-colors"
+              aria-label="Next testimonial"
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
         </div>
       )}
